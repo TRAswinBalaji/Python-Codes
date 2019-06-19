@@ -6,37 +6,37 @@
 
 
 def make_dict(string):
-    d=dict()
+    d = dict()
     for c in string:
-        d[c]=d.get(c,0)+1
+        d[c] = d.get(c, 0) + 1
     return d
 
+
 def print_dict(d):
-    
     print("Key\tValue")
     for key in d:
-        print(key,'\t',d[key])
+        print(key, '\t', d[key])
 
 
 def inverse_dict(d):
-    inverse=dict()
+    inverse = dict()
     for key in d:
-        val=d[key]
+        val = d[key]
         if val not in inverse:
-            inverse[val]=[key]
+            inverse[val] = [key]
         else:
             inverse[val].append(key)
     return inverse
 
 
-string='parrot'
-d=make_dict(string)
+string = 'parrot'
+d = make_dict(string)
 print("Dictionary:")
 print_dict(d)
-inv=inverse_dict(d)
+inv = inverse_dict(d)
 print("Inverse Dictionary:")
 print_dict(inv)
-            
+
 '''-----------------------Output------------
 Dictionary:
 Key	Value

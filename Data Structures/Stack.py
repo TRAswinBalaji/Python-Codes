@@ -1,56 +1,58 @@
 class Stack(object):
-	"""docstring for Stack"""
-	def __init__(self):
-		super(Stack, self).__init__()
-		self.top = -1
-		self.maxElem = 50
-		self.data = [None for i in range(50)]
+    """docstring for Stack"""
 
-	def push(self, value):
-		if self.top == self.maxElem-1 :
-			print("Stack Overflow")
-			return
+    def __init__(self):
+        super(Stack, self).__init__()
+        self.top = -1
+        self.maxElem = 50
+        self.data = [None for i in range(50)]
 
-		self.top+=1
-		self.data[self.top] = value
+    def push(self, value):
+        if self.top == self.maxElem - 1:
+            print("Stack Overflow")
+            return
 
-	def pop(self):
+        self.top += 1
+        self.data[self.top] = value
 
-		if self.top == -1:
-			print("Stack Underflow")
-			return
+    def pop(self):
 
-		print("Popped Elem",self.data[self.top])
-		self.top-=1
+        if self.top == -1:
+            print("Stack Underflow")
+            return
 
-	def peek(self):
-		if self.top == -1:
-			print("Empty Stack")
-			return None
+        print("Popped Elem", self.data[self.top])
+        self.top -= 1
 
-		return self.data[self.top]
+    def peek(self):
+        if self.top == -1:
+            print("Empty Stack")
+            return None
 
-	def printStack(self):
+        return self.data[self.top]
 
-		if self.top == -1:
-			print("Empty Stack")
-			return
-		temp = self.top
-		while(temp != -1):
-			print(self.data[temp])
-			temp-=1
-		
+    def printStack(self):
+
+        if self.top == -1:
+            print("Empty Stack")
+            return
+        temp = self.top
+        while (temp != -1):
+            print(self.data[temp])
+            temp -= 1
+
+
 if __name__ == '__main__':
-	stack = Stack()
-	stack.printStack()
-	stack.pop()
-	stack.push(1)
-	stack.push(2)
-	stack.push(3)
-	stack.push(4)
-	stack.push(5)
-	stack.printStack()
+    stack = Stack()
+    stack.printStack()
+    stack.pop()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    stack.push(5)
+    stack.printStack()
 
-	stack.pop()
-	stack.printStack()
-	print(stack.peek())
+    stack.pop()
+    stack.printStack()
+    print(stack.peek())

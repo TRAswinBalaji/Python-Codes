@@ -1,61 +1,61 @@
 class Stack(object):
-	"""docstring for Stack"""
-	def __init__(self):
-		super(Stack, self).__init__()
-		self.top = -1
-		self.maxElem = 50
-		self.data = [None for i in range(50)]
+    """docstring for Stack"""
 
-	def push(self, value):
-		if self.top == self.maxElem-1 :
-			print("Stack Overflow")
-			return
-		self.top+=1
-		self.data[self.top] = value
+    def __init__(self):
+        super(Stack, self).__init__()
+        self.top = -1
+        self.maxElem = 50
+        self.data = [None for i in range(50)]
 
-	def pop(self):
-		if self.top == -1:
-			print("Stack Underflow")
-			return
-		print("Popped Elem",self.data[self.top])
-		self.top-=1
+    def push(self, value):
+        if self.top == self.maxElem - 1:
+            print("Stack Overflow")
+            return
+        self.top += 1
+        self.data[self.top] = value
 
-	def peek(self):
-		if self.top == -1:
-			#print("Empty Stack")
-			return None
+    def pop(self):
+        if self.top == -1:
+            print("Stack Underflow")
+            return
+        print("Popped Elem", self.data[self.top])
+        self.top -= 1
 
-		return self.data[self.top]
+    def peek(self):
+        if self.top == -1:
+            # print("Empty Stack")
+            return None
 
-	def printStack(self):
-		if self.top == -1:
-			print("Empty Stack")
-			return
-		temp = self.top
-		while(temp != -1):
-			print(self.data[temp],end =' ')
-			temp-=1
-		print()
+        return self.data[self.top]
 
-		
+    def printStack(self):
+        if self.top == -1:
+            print("Empty Stack")
+            return
+        temp = self.top
+        while (temp != -1):
+            print(self.data[temp], end=' ')
+            temp -= 1
+        print()
+
+
 if __name__ == '__main__':
 
-	a=[11,23,3,3,1,18]
-	minstack = Stack()
-	for i in a:
-		if(minstack.peek()==None or i<=minstack.peek()):
-			minstack.push(i)
-	minstack.printStack()
+    a = [11, 23, 3, 3, 1, 18]
+    minstack = Stack()
+    for i in a:
+        if minstack.peek() is None or i <= minstack.peek():
+            minstack.push(i)
+    minstack.printStack()
 
-	print("Min elem", minstack.peek())
+    print("Min elem", minstack.peek())
 
-	t=a.pop()
-	if t==minstack.peek():
-		minstack.pop()
-	print("Min elem", minstack.peek())	
+    t = a.pop()
+    if t == minstack.peek():
+        minstack.pop()
+    print("Min elem", minstack.peek())
 
-	t=a.pop()
-	if t==minstack.peek():
-		minstack.pop()
-	print("Min elem", minstack.peek())	
-
+    t = a.pop()
+    if t == minstack.peek():
+        minstack.pop()
+    print("Min elem", minstack.peek())

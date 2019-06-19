@@ -6,16 +6,18 @@
 
 '''A previously computed value that is stored for later use is called a memo'''
 
-known={0:0,1:1}
+known = {0: 0, 1: 1}
+
 
 def fib(n):
     if n in known:
         return known[n]
     else:
-        res=fib(n-1)+fib(n-2)
-        known[n]=res
+        res = fib(n - 1) + fib(n - 2)
+        known[n] = res
         return res
 
-n=10
+
+n = 10
 for i in range(1000):
     print(fib(i))

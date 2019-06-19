@@ -12,22 +12,24 @@ Write a Python program that tests all the six-digit numbers and prints any numbe
 these requirements.'''
 
 
+def ispal(n, start, end):
+    s = str(n)
+    s1 = s[start:end + 1]
+    s2 = s1[::-1]
+    return s1 == s2
 
-def ispal(n,start,end):
-    s=str(n)
-    s1=s[start:end+1]
-    s2=s1[::-1]
-    return s1==s2
 
 def check(n):
-    return(ispal(n,2,5) and ispal(n+1,1,5) and ispal(n+2,1,4) and ispal(n+3,0,5))
+    return (ispal(n, 2, 5) and ispal(n + 1, 1, 5) and ispal(n + 2, 1, 4) and ispal(n + 3, 0, 5))
+
 
 def check_all():
-    i=100000
-    while i<1000000:
+    i = 100000
+    while i < 1000000:
         if check(i):
             print(i)
-        i=i+1
+        i = i + 1
+
 
 print('Possible Solutions are:')
 check_all()
